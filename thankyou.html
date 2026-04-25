@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>धन्यवाद — आपकी Request मिल गई | AyurvedaHearing Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #FDF6EC;
+      --dark: #1A1208;
+      --gold: #C4952A;
+      --gold-light: #E8C56A;
+      --gold-pale: #FDF0D0;
+      --deep-green: #2C4A2E;
+      --sage: #4A7C59;
+      --sage-light: #7BAF8A;
+      --rust: #8B3A0F;
+      --warm-white: #FFFDF8;
+      --text-body: #3D2B0A;
+      --text-muted: #6B5535;
+      --section-bg: #F5ECD8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Halant', serif;
+      background: #D6CDB8;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 450px;
+      background: var(--cream);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ===== ANIMATED BACKGROUND PARTICLES ===== */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 450px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      animation: float-up 6s ease-in infinite;
+    }
+
+    .p1 {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      left: 15%;
+      animation-delay: 0s;
+      animation-duration: 5s;
+    }
+
+    .p2 {
+      width: 4px;
+      height: 4px;
+      background: var(--sage-light);
+      left: 30%;
+      animation-delay: 0.8s;
+      animation-duration: 7s;
+    }
+
+    .p3 {
+      width: 8px;
+      height: 8px;
+      background: var(--gold-light);
+      left: 50%;
+      animation-delay: 1.5s;
+      animation-duration: 6s;
+    }
+
+    .p4 {
+      width: 5px;
+      height: 5px;
+      background: var(--sage);
+      left: 70%;
+      animation-delay: 2.2s;
+      animation-duration: 8s;
+    }
+
+    .p5 {
+      width: 3px;
+      height: 3px;
+      background: var(--gold);
+      left: 85%;
+      animation-delay: 0.4s;
+      animation-duration: 5.5s;
+    }
+
+    .p6 {
+      width: 7px;
+      height: 7px;
+      background: var(--gold-light);
+      left: 20%;
+      animation-delay: 3s;
+      animation-duration: 7s;
+    }
+
+    .p7 {
+      width: 4px;
+      height: 4px;
+      background: var(--sage-light);
+      left: 60%;
+      animation-delay: 1s;
+      animation-duration: 6.5s;
+    }
+
+    .p8 {
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      left: 40%;
+      animation-delay: 4s;
+      animation-duration: 5s;
+    }
+
+    @keyframes float-up {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.6;
+      }
+
+      90% {
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: translateY(-100px) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    /* ===== HERO SUCCESS SECTION ===== */
+    .success-hero {
+      background: linear-gradient(160deg, var(--deep-green) 0%, #1A3020 55%, #0D1A10 100%);
+      padding: 0 0 36px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .success-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 149, 42, 0.2) 0%, transparent 65%);
+    }
+
+    .success-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(75, 124, 89, 0.18) 0%, transparent 65%);
+    }
+
+    /* Top bar */
+    .top-bar {
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    /* Checkmark animation */
+    .check-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 40px 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .check-ring {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: transparent;
+      border: 3px solid rgba(196, 149, 42, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: ring-pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes ring-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(196, 149, 42, 0.35);
+      }
+
+      50% {
+        box-shadow: 0 0 0 18px rgba(196, 149, 42, 0);
+      }
+    }
+
+    .check-inner {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #E8A820);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      box-shadow: 0 8px 32px rgba(196, 149, 42, 0.5);
+      animation: pop-in 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes pop-in {
+      0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.15) rotate(5deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    /* Confetti dots ring */
+    .check-ring::before {
+      content: '';
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 2px dashed rgba(196, 149, 42, 0.3);
+      animation: spin-slow 10s linear infinite;
+    }
+
+    @keyframes spin-slow {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hero-text {
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+      animation: slide-up 0.7s 0.3s ease both;
+    }
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(24px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hero-thanks {
+      font-size: 13px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .hero-headline {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .hero-headline span {
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* Timer countdown */
+    .timer-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      animation: slide-up 0.7s 0.5s ease both;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timer-box {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(196, 149, 42, 0.35);
+      border-radius: 12px;
+      padding: 10px 14px;
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .timer-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+      line-height: 1;
+    }
+
+    .timer-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      display: block;
+    }
+
+    .timer-colon {
+      font-size: 26px;
+      color: var(--gold);
+      align-self: center;
+      margin-bottom: 14px;
+      font-weight: 700;
+      opacity: 0.6;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 0.6
+      }
+
+      50% {
+        opacity: 0
+      }
+    }
+
+    /* Confirmation strip */
+    .confirm-strip {
+      margin: 0 22px;
+      background: rgba(75, 124, 89, 0.2);
+      border: 1px solid rgba(75, 124, 89, 0.5);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+      animation: slide-up 0.7s 0.7s ease both;
+    }
+
+    .confirm-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .confirm-text {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.5;
+    }
+
+    .confirm-text strong {
+      color: var(--sage-light);
+    }
+
+    /* ===== SECTION BASE ===== */
+    .section {
+      padding: 32px 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-alt {
+      background: var(--section-bg);
+    }
+
+    .section-dark {
+      background: linear-gradient(160deg, var(--deep-green), #142018);
+      color: #fff;
+    }
+
+    .sec-label {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .sec-label-light {
+      color: var(--gold-light);
+    }
+
+    .sec-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+
+    .sec-title-white {
+      color: #fff;
+    }
+
+    .divider {
+      width: 44px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 10px 0 20px;
+    }
+
+    /* ===== WHAT HAPPENS NEXT ===== */
+    .next-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .next-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 20px rgba(26, 18, 8, 0.08);
+      border: 1px solid rgba(196, 149, 42, 0.18);
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: transform 0.22s, box-shadow 0.22s;
+      animation: slide-up 0.6s ease both;
+    }
+
+    .next-step:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .next-step:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .next-step:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .next-step:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .next-step:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 30px rgba(44, 74, 46, 0.15);
+      border-color: var(--sage);
+    }
+
+    .next-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), var(--sage));
+      border-radius: 4px 0 0 4px;
+    }
+
+    .step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), #E8A820);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(196, 149, 42, 0.35);
+      transition: transform 0.2s;
+    }
+
+    .next-step:hover .step-badge {
+      transform: rotate(-5deg) scale(1.1);
+    }
+
+    .step-info {}
+
+    .step-time {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== WHAT YOU'LL GET ===== */
+    .get-grid {
+      display: grid;
+      grid-template-rows: 2fr;
+      grid-template-columns: 2fr;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .get-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(196, 149, 42, 0.28);
+      border-radius: 14px;
+      padding: 18px 14px;
+      text-align: center;
+      transition: background 0.22s, transform 0.22s;
+      cursor: default;
+      animation: slide-up 0.6s ease both;
+    }
+
+    .get-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .get-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .get-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .get-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .get-card:hover {
+      background: rgba(196, 149, 42, 0.18);
+      transform: translateY(-4px);
+    }
+
+    .get-card-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .get-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .get-card-sub {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.4;
+    }
+
+    .get-free-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== PREPARE SECTION ===== */
+    .prepare-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .prepare-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 14px;
+      background: #fff;
+      border-radius: 12px;
+      border-left: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(26, 18, 8, 0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: default;
+    }
+
+    .prepare-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 6px 20px rgba(196, 149, 42, 0.14);
+    }
+
+    .prepare-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .prepare-text {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.5;
+    }
+
+    .prepare-text strong {
+      color: var(--deep-green);
+      font-size: 16px;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* ===== SOCIAL PROOF STRIP ===== */
+    .social-strip {
+      background: var(--dark);
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 10px;
+    }
+
+    .soc-stat {
+      text-align: center;
+    }
+
+    .soc-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .soc-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.45);
+      line-height: 1.4;
+    }
+
+    .soc-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      padding: 20px 22px;
+      text-align: center;
+      border-top: 3px solid var(--gold);
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .footer-tag {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* ===== FLOATING WHATSAPP ===== */
+    .float-wa {
+      position: fixed;
+      bottom: 24px;
+      right: calc(50% - 225px + 16px);
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      z-index: 200;
+      animation: bounce-in 0.8s 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+    }
+
+    @keyframes bounce-in {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .float-wa-ping {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: 16px;
+      height: 16px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 2px solid var(--dark);
+      animation: ping 1.5s ease infinite;
+    }
+
+    @keyframes ping {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 0.6;
+      }
+    }
+
+    /* Responsive fallback for small screens */
+    @media (max-width: 450px) {
+      .float-wa {
+        right: 16px;
+      }
+    }
+
+    pb {
+      display: block;
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background particles -->
+  <div class="particles">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+    <div class="particle p7"></div>
+    <div class="particle p8"></div>
+  </div>
+
+  <div class="page">
+
+    <!-- ===== SUCCESS HERO ===== -->
+    <section class="success-hero">
+      <div class="top-bar">✅ Booking Confirmed — हमारी Team तैयार है</div>
+
+      <div class="check-wrap">
+        <div class="check-ring">
+          <div class="check-inner">✅</div>
+        </div>
+      </div>
+
+      <div class="hero-text">
+        <div class="hero-thanks">🙏 धन्यवाद</div>
+        <h1 class="hero-headline">
+          आपकी Request<br><span>Successfully मिल गई!</span>
+        </h1>
+        <p class="hero-sub">
+          हमारी Expert Team <strong style="color:var(--gold-light);">24 घंटे के अंदर</strong> आपसे personally connect
+          करेगी।<br>
+          एक सही decision की शुरुआत हो चुकी है।
+        </p>
+
+        <!-- Countdown Timer -->
+        <div class="timer-wrap">
+          <div class="timer-box">
+            <span class="timer-num" id="th">24</span>
+            <span class="timer-label">घंटे</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-num" id="tm">00</span>
+            <span class="timer-label">मिनट</span>
+          </div>
+          <div class="timer-colon">:</div>
+          <div class="timer-box">
+            <span class="timer-num" id="ts">00</span>
+            <span class="timer-label">सेकंड</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="confirm-strip">
+        <span class="confirm-icon">📱</span>
+        <span class="confirm-text">आपके registered number पर हमारा Expert जल्द call करेगा।<br><strong>Unknown number से
+            call आ सकती है — ज़रूर उठाएं।</strong></span>
+      </div>
+    </section>
+
+    <!-- ===== NEXT STEPS ===== -->
+    <section class="section">
+      <div class="sec-label">📋 आगे क्या होगा</div>
+      <h2 class="sec-title">आपके Next Steps — Step by Step</h2>
+      <div class="divider"></div>
+
+      <div class="next-steps">
+
+        <div class="next-step">
+          <div class="step-badge">📞</div>
+          <div class="step-info">
+            <div class="step-time">Step 1 — 24 Hours में</div>
+            <div class="step-title">हमारी Team का Call आएगा</div>
+            <div class="step-desc">हमारा Ayurvedic Expert आपको personally call करेगा। Unknown number से call आ सकती है —
+              ज़रूर उठाएं।</div>
+          </div>
+        </div>
+
+        <div class="next-step">
+          <div class="step-badge">🩺</div>
+          <div class="step-info">
+            <div class="step-time">Step 2 — Call पर</div>
+            <div class="step-title">FREE Consultation होगी</div>
+            <div class="step-desc">आपकी पूरी history, symptoms, और problem carefully सुनी जाएगी। बिना किसी judgment के।
+            </div>
+          </div>
+        </div>
+
+        <div class="next-step">
+          <div class="step-badge">🔍</div>
+          <div class="step-info">
+            <div class="step-time">Step 3 — Analysis</div>
+            <div class="step-title">Cause Clear किया जाएगा</div>
+            <div class="step-desc">आपकी problem reversible है या नहीं — और कितना improvement possible है — यह clearly
+              बताया जाएगा।</div>
+          </div>
+        </div>
+
+        <div class="next-step">
+          <div class="step-badge">🌿</div>
+          <div class="step-info">
+            <div class="step-time">Step 4 — Plan Ready</div>
+            <div class="step-title">Personalized Guidance मिलेगी</div>
+            <div class="step-desc">आपके case के अनुसार Ayurvedic therapy plan + FREE Diet Chart दिया जाएगा।</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== WHAT YOU'LL GET ===== -->
+    <section class="section section-dark">
+      <div class="sec-label sec-label-light">🎁 आपको मिलेगा</div>
+      <h2 class="sec-title sec-title-white">इस FREE Session में क्या-क्या</h2>
+      <div class="divider"></div>
+
+      <div class="get-grid">
+        <div class="get-card">
+          <div class="get-card-icon">🎯</div>
+          <div class="get-card-title">Real Cause</div>
+          <div class="get-card-sub">आपकी hearing problem का असली कारण</div>
+          <div class="get-free-tag">FREE</div>
+        </div>
+        <div class="get-card">
+          <div class="get-card-icon">📊</div>
+          <div class="get-card-title">Improvement Report</div>
+          <div class="get-card-sub">Therapy से कितना improvement possible</div>
+          <div class="get-free-tag">FREE</div>
+        </div>
+        <div class="get-card">
+          <div class="get-card-icon">🥗</div>
+          <div class="get-card-title">Diet Chart</div>
+          <div class="get-card-sub">आपके case के अनुसार personalized</div>
+          <div class="get-free-tag">FREE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PREPARE FOR CALL ===== -->
+    <section class="section section-alt">
+      <div class="sec-label">📝 Call की तैयारी करें</div>
+      <h2 class="sec-title">Call से पहले ये जानकारी रखें</h2>
+      <div class="divider"></div>
+      <p style="font-size:15px;color:var(--text-muted);margin-bottom:18px;line-height:1.6;">ये जानकारी होने से हमारा
+        Expert आपको और बेहतर guidance दे पाएगा:</p>
+
+      <div class="prepare-list">
+        <div class="prepare-item">
+          <span class="prepare-icon">⏱️</span>
+          <div class="prepare-text">
+            <strong>Problem कितने समय से है?</strong>
+            महीने या साल में बताएं — यह बहुत important है।
+          </div>
+        </div>
+        <div class="prepare-item">
+          <span class="prepare-icon">🔊</span>
+          <div class="prepare-text">
+            <strong>क्या Hearing Machine Use करते हैं?</strong>
+            कौन से कान में और कितने समय से — ready रखें।
+          </div>
+        </div>
+        <div class="prepare-item">
+          <span class="prepare-icon">💊</span>
+          <div class="prepare-text">
+            <strong>कोई दवाई चल रही है?</strong>
+            कोई भी current medication / treatment note कर लें।
+          </div>
+        </div>
+        <div class="prepare-item">
+          <span class="prepare-icon">🏥</span>
+          <div class="prepare-text">
+            <strong>पहले कोई Test हुआ है?</strong>
+            Audiometry report या doctor prescription हो तो पास रखें।
+          </div>
+        </div>
+        <div class="prepare-item">
+          <span class="prepare-icon">📍</span>
+          <div class="prepare-text">
+            <strong>Quiet जगह पर रहें</strong>
+            Call के दौरान शांत जगह पर हों ताकि clearly बात हो सके।
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF STRIP ===== -->
+    <div class="social-strip">
+      <div class="soc-stat">
+        <span class="soc-num">500+</span>
+        <span class="soc-label">Patients<br>Consulted</span>
+      </div>
+      <div class="soc-divider"></div>
+      <div class="soc-stat">
+        <span class="soc-num">4.8★</span>
+        <span class="soc-label">Average<br>Rating</span>
+      </div>
+      <div class="soc-divider"></div>
+      <div class="soc-stat">
+        <span class="soc-num">100%</span>
+        <span class="soc-label">Free<br>Consultation</span>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer">
+      <div class="footer-logo">🌿 AyurvedaHearing Care</div>
+      <div class="footer-tag">Root Cause Based · Natural · Safe · Personalized</div>
+      <p style="font-size:11px;color:rgba(255,255,255,0.2);margin-top:6px;">© 2025 All Rights Reserved</p>
+    </div>
+  </div>
+
+  <script>
+    // ===== 24-hour countdown =====
+    const deadline = new Date();
+    deadline.setHours(deadline.getHours() + 24);
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = Math.max(0, deadline - now);
+      const h = Math.floor(diff / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('th').textContent = String(h).padStart(2, '0');
+      document.getElementById('tm').textContent = String(m).padStart(2, '0');
+      document.getElementById('ts').textContent = String(s).padStart(2, '0');
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+
+
+  </script>
+</body>
+
+</html>
