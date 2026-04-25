@@ -264,7 +264,7 @@
   }
 
   .sec-label {
-    font-size: 11px;
+    font-size: 16px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--gold);
@@ -280,7 +280,7 @@
   }
   .sec-title-white { color: #fff; }
   .sec-body {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.6;
     color: var(--text-body);
   }
@@ -320,20 +320,20 @@
     box-shadow: 0 12px 40px rgba(139,58,15,0.15);
   }
   .problem-card-img {
-    width: 72px; height: 72px;
+    width: 170px; height: 170px;
     border-radius: 10px;
     object-fit: cover;
     flex-shrink: 0;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%);
   }
   .problem-card-content .pcard-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--rust);
     margin-bottom: 4px;
   }
   .problem-card-content .pcard-body {
-    font-size: 14px;
+    font-size: 18px;
     color: var(--text-muted);
     line-height: 1.45;
   }
@@ -354,72 +354,110 @@
   .problem-impact strong { color: var(--gold-light); font-size: 17px; }
 
   /* ===== AWARENESS / MYTH SECTION ===== */
-  .myth-wrap {
-    position: relative;
-    margin-top: 20px;
+  /* ===== AWARENESS / MYTH BREAK ===== */
+  .awareness-section {
+    background: linear-gradient(160deg, #1A0A0A 0%, #2A0E0E 60%, #1A0A0A 100%);
   }
-  .myth-vs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 18px;
+  .awareness-section .sec-label {
+    color: #FF6B4A;
+    letter-spacing: 2px;
   }
-  .myth-card {
-    border-radius: 14px;
-    padding: 16px 14px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+  .awareness-section .sec-title {
+    color: #fff;
+    font-size: 24px;
   }
-  .myth-bad {
-    background: #FFF0EB;
-    border: 2px solid #E07050;
+  .awareness-section .divider {
+    background: #FF6B4A;
   }
-  .myth-good {
-    background: #EBF4EE;
-    border: 2px solid var(--sage);
+  .awareness-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
   }
-  .myth-card-icon { font-size: 28px; margin-bottom: 8px; }
-  .myth-card-title {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .myth-bad .myth-card-title { color: var(--rust); }
-  .myth-good .myth-card-title { color: var(--deep-green); }
-  .myth-card ul {
-    list-style: none;
-    font-size: 13px;
-    line-height: 1.6;
-    text-align: left;
-  }
-  .myth-card ul li::before { content: '→ '; font-weight: 700; }
-  .myth-bad ul li::before { color: var(--rust); }
-  .myth-good ul li::before { color: var(--sage); }
-
-  .myth-image-frame {
+  .awareness-card {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255,255,255,0.04);
+    border: 1.5px solid rgba(255,107,74,0.35);
     border-radius: 16px;
     overflow: hidden;
-    clip-path: polygon(6% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 6%);
-    border: 2px solid var(--gold-light);
-    position: relative;
+    transition: transform 0.22s, border-color 0.22s;
+    cursor: default;
   }
-  .myth-image-frame img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
+  .awareness-card:hover {
+    transform: translateX(5px);
+    border-color: #FF6B4A;
   }
-  .myth-image-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: linear-gradient(transparent, rgba(26,18,8,0.85));
+  .awareness-num {
+    min-width: 56px;
+    height: 100%;
+    min-height: 80px;
+    background: linear-gradient(160deg, #C0392B, #8B1A0A);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
     color: #fff;
-    font-size: 14px;
-    padding: 24px 14px 12px;
-    font-weight: 600;
+    flex-shrink: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .awareness-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 16px;
+    flex: 1;
+  }
+  .awareness-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+  .awareness-point {
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+  }
+  .awareness-point strong {
+    color: #FF6B4A;
+    font-size: 16px;
+  }
+  .awareness-conclusion {
+    background: linear-gradient(135deg, rgba(196,149,42,0.15), rgba(196,149,42,0.05));
+    border: 1.5px solid var(--gold);
+    border-radius: 16px;
+    padding: 20px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .awareness-conclusion::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #FF6B4A, var(--gold));
+    border-radius: 4px 0 0 4px;
+  }
+  .awareness-conclusion-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .awareness-conclusion-line {
+    font-size: 17px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+  }
+  .awareness-conclusion-line strong {
+    color: #FF6B4A;
+    font-size: 18px;
   }
 
   /* ===== EDUCATION SECTION ===== */
@@ -469,19 +507,19 @@
   }
   .edu-item:hover { background: rgba(196,149,42,0.07); }
   .edu-item-img {
-    width: 64px; height: 64px;
+    width: 160px; height: 160px;
     border-radius: 10px;
     object-fit: cover;
     flex-shrink: 0;
     clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 15% 100%, 0 85%);
   }
   .edu-item-text strong {
-    font-size: 16px;
+    font-size: 22px;
     display: block;
     margin-bottom: 3px;
   }
   .edu-item-text span {
-    font-size: 13px;
+    font-size: 18px;
     color: var(--text-muted);
   }
   .edu-reversible strong { color: var(--deep-green); }
@@ -539,7 +577,8 @@
     align-items: center;
     background: linear-gradient(135deg, #fff 0%, var(--section-bg) 100%);
     border-radius: 14px;
-    padding: 15px;
+    padding: 15px 15px 15px 0px;
+    border-radius: 110px 20px 20px 110px;
     box-shadow: 0 4px 16px rgba(44,74,46,0.1);
     border: 1px solid rgba(75,124,89,0.2);
     transition: transform 0.22s, box-shadow 0.22s;
@@ -551,27 +590,27 @@
     border-color: var(--sage);
   }
   .pillar-img {
-    width: 70px; height: 70px;
+    width: 150px; height: 150px;
     border-radius: 12px;
     object-fit: cover;
     flex-shrink: 0;
     clip-path: circle(48%);
   }
   .pillar-num {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     color: var(--gold);
     line-height: 1;
     margin-bottom: 2px;
   }
   .pillar-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--deep-green);
     margin-bottom: 3px;
   }
   .pillar-desc {
-    font-size: 13px;
+    font-size: 16px;
     color: var(--text-muted);
     line-height: 1.4;
   }
@@ -624,7 +663,7 @@
   .step-item:hover .step-card { transform: translateX(4px); }
   .step-card-img {
     width: 100%;
-    height: 130px;
+    height: 220px;
     object-fit: cover;
     display: block;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -747,6 +786,7 @@
   .expert-card {
     display: flex;
     gap: 14px;
+    justify-content: center;
     align-items: center;
     background: #fff;
     border-radius: 18px;
@@ -758,23 +798,12 @@
   }
   .expert-card:hover { transform: translateY(-3px); }
   .expert-avatar {
-    width: 80px; height: 80px;
-    border-radius: 50%;
+    width: 100%; height: 250px;
     object-fit: cover;
     border: 3px solid var(--gold);
     flex-shrink: 0;
   }
-  .expert-name {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--deep-green);
-    margin-bottom: 3px;
-  }
-  .expert-creds {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
+
   .trust-badges {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -815,7 +844,7 @@
   .ba-card:hover { transform: scale(1.02); }
   .ba-top {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .ba-img-wrap {
     position: relative;
@@ -918,7 +947,7 @@
     margin-bottom: 10px;
   }
   .review-avatar {
-    width: 46px; height: 46px;
+    width: 56px; height: 56px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--gold);
@@ -1273,7 +1302,7 @@
   .edu-tab.reversible.active-tab { background: var(--sage); color: #fff; }
   .edu-tab.non-reversible.active-tab { background: var(--rust); color: #fff; }
 
-  pb { padding-bottom: 80px; display: block; }
+  pb { padding-bottom: 78px; display: block; }
 </style>
 </head>
 <body>
@@ -1284,44 +1313,7 @@
   <div class="hero-badge">🌿 निःशुल्क आयुर्वेदिक परामर्श — सीमित स्थान उपलब्ध</div>
 
   <section class="hero">
-    <div class="hero-top">
-      <div class="hero-eyebrow">Ayurvedic Hearing Experts</div>
-      <h1 class="hero-headline">
-        Hearing Machine<br><span>कान की Problem को<br>ठीक नहीं करती</span>
-      </h1>
-      <p class="hero-sub">बस आवाज़ बढ़ाकर आपको उसी पर <strong>dependent</strong> बना देती है</p>
-    </div>
-
-    <div class="pain-strip">
-      <div class="pain-item">
-        <span class="pain-icon">🔇</span>
-        <span class="pain-text">बार-बार "क्या?" पूछना पड़ता है</span>
-      </div>
-      <div class="pain-item">
-        <span class="pain-icon">📵</span>
-        <span class="pain-text">Phone calls avoid करते हैं</span>
-      </div>
-      <div class="pain-item">
-        <span class="pain-icon">😶</span>
-        <span class="pain-text">लोगों के बीच बोलने से बचते हैं</span>
-      </div>
-    </div>
-
-    <div class="hero-img-wrap">
-      <div class="hero-img-frame">
-        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80" alt="Doctor Consulting Patient"/>
-        <div class="hero-img-badge">✅ Ayurvedic Expert Available</div>
-      </div>
-    </div>
-
-    <div class="hero-statement">
-      <p>ये सिर्फ hearing issue नहीं… <strong>ये आपकी confidence और identity को affect कर रहा है।</strong><br><br>अगर आपकी problem reversible है — तो सही therapy से <strong>improvement possible है।</strong></p>
-    </div>
-
-    <div class="hero-cta">
-      <a href="#order" class="btn-primary">🎯 FREE Consultation अभी Book करें</a>
-      <p class="btn-sub">100% Free · No Hidden Charges · COD Available</p>
-    </div>
+    <img src="./Image/Hero.png" alt="Hero" style="width:100%;height:auto;display:block;">
   </section>
 
   <!-- ========== PROBLEM SECTION ========== -->
@@ -1332,21 +1324,21 @@
 
     <div class="problem-cards">
       <div class="problem-card">
-        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=300&q=80" alt="Ear Problem" class="problem-card-img"/>
+        <img src="./Image/1.png" alt="Ear Problem" class="problem-card-img"/>
         <div class="problem-card-content">
           <div class="pcard-title">Clear नहीं सुन पाते</div>
           <div class="pcard-body">लोग कुछ बोलते हैं… और आप clearly नहीं समझ पाते। बार-बार पूछना पड़ता है।</div>
         </div>
       </div>
       <div class="problem-card">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="Social Anxiety" class="problem-card-img"/>
+        <img src="./Image/2.png" alt="Social Anxiety" class="problem-card-img"/>
         <div class="problem-card-content">
           <div class="pcard-title">Awkward Feel होता है</div>
           <div class="pcard-body">बार-बार पूछने में शर्म आती है। धीरे-धीरे interact करना कम हो जाता है।</div>
         </div>
       </div>
       <div class="problem-card">
-        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt="Confidence Loss" class="problem-card-img"/>
+        <img src="./Image/3.png" alt="Confidence Loss" class="problem-card-img"/>
         <div class="problem-card-content">
           <div class="pcard-title">Confidence टूट रहा है</div>
           <div class="pcard-body">बोलना और interact करना कम कर देते हैं। Relationships और daily life affect हो रही है।</div>
@@ -1360,37 +1352,43 @@
   </section>
 
   <!-- ========== MYTH BREAK ========== -->
-  <section class="section section-alt">
-    <div class="sec-label">⚠️ सच्चाई जानें</div>
-    <h2 class="sec-title">Machine — Problem का Solution नहीं है</h2>
+  <section class="section awareness-section">
+    <div class="sec-label">⚠️ AWARENESS / MYTH BREAK</div>
+    <h2 class="sec-title">सच्चाई क्या है?</h2>
     <div class="divider"></div>
 
-    <div class="myth-vs">
-      <div class="myth-card myth-bad">
-        <div class="myth-card-icon">🔊</div>
-        <div class="myth-card-title">Machine</div>
-        <ul>
-          <li>Problem ठीक नहीं करती</li>
-          <li>सिर्फ sound amplify</li>
-          <li>हटाते ही difficulty</li>
-          <li>Permanent dependency</li>
-        </ul>
+    <div class="awareness-cards">
+
+      <div class="awareness-card">
+        <div class="awareness-num">1</div>
+        <div class="awareness-content">
+          <img class="awareness-icon" src="./Image/4.png" alt="icon">
+          <div class="awareness-point">Hearing machine problem को <strong>ठीक नहीं करती</strong></div>
+        </div>
       </div>
-      <div class="myth-card myth-good">
-        <div class="myth-card-icon">🌿</div>
-        <div class="myth-card-title">Ayurvedic</div>
-        <ul>
-          <li>Root cause पर काम</li>
-          <li>Natural healing</li>
-          <li>Long-term benefit</li>
-          <li>No dependency</li>
-        </ul>
+
+      <div class="awareness-card">
+        <div class="awareness-num">2</div>
+        <div class="awareness-content">
+          <img class="awareness-icon" src="./Image/5.png" alt="icon">
+          <div class="awareness-point">ये सिर्फ sound को <strong>amplify करती है</strong></div>
+        </div>
       </div>
+
+      <div class="awareness-card">
+        <div class="awareness-num">3</div>
+        <div class="awareness-content">
+          <img class="awareness-icon" src="./Image/6.png" alt="icon">
+          <div class="awareness-point">हटाते ही फिर <strong>वही difficulty शुरू</strong> हो जाती है</div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="myth-image-frame">
-      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Medical Consultation"/>
-      <div class="myth-image-caption">🎯 आप problem solve नहीं कर रहे… बस manage कर रहे हैं</div>
+    <div class="awareness-conclusion">
+      <div class="awareness-conclusion-label">👉 मतलब:</div>
+      <div class="awareness-conclusion-line">आप problem <strong>solve नहीं</strong> कर रहे…</div>
+      <div class="awareness-conclusion-line">बस उसे <strong>manage</strong> कर रहे हैं</div>
     </div>
   </section>
 
@@ -1408,30 +1406,30 @@
 
     <div class="edu-content active" id="edu-reversible">
       <div class="edu-item edu-reversible">
-        <img src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=200&q=80" alt="Ear Wax" class="edu-item-img"/>
+        <img src="./Image/7.png" alt="Ear Wax" class="edu-item-img"/>
         <div class="edu-item-text"><strong>Wax Blockage</strong><span>Cleaning से ठीक हो सकता है</span></div>
       </div>
       <div class="edu-item edu-reversible">
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=200&q=80" alt="Infection" class="edu-item-img"/>
+        <img src="./Image/8.png" alt="Infection" class="edu-item-img"/>
         <div class="edu-item-text"><strong>Ear Infection</strong><span>Treatment से improvement possible</span></div>
       </div>
       <div class="edu-item edu-reversible">
-        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&q=80" alt="Fluid" class="edu-item-img"/>
+        <img src="./Image/9.png" alt="Fluid" class="edu-item-img"/>
         <div class="edu-item-text"><strong>Fluid Issue</strong><span>Therapy से manage होता है</span></div>
       </div>
       <div class="edu-item edu-reversible">
-        <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=200&q=80" alt="Early Stage" class="edu-item-img"/>
+        <img src="./Image/10.png" alt="Early Stage" class="edu-item-img"/>
         <div class="edu-item-text"><strong>Early Stage Damage</strong><span>Early action से बेहतर results</span></div>
       </div>
     </div>
 
     <div class="edu-content" id="edu-non-reversible">
       <div class="edu-item edu-nonreversible">
-        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=200&q=80" alt="Nerve Damage" class="edu-item-img"/>
+        <img src="./Image/11.png" alt="Nerve Damage" class="edu-item-img"/>
         <div class="edu-item-text"><strong>Nerve Damage</strong><span>Support की जरूरत पड़ती है</span></div>
       </div>
       <div class="edu-item edu-nonreversible">
-        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=200&q=80" alt="Age Related" class="edu-item-img"/>
+        <img src="./Image/12.png" alt="Age Related" class="edu-item-img"/>
         <div class="edu-item-text"><strong>Age-Related Loss</strong><span>Guided support से quality of life बेहतर</span></div>
       </div>
       <p style="font-size:15px;color:var(--text-muted);line-height:1.6;margin-top:14px;padding:14px;background:rgba(139,58,15,0.07);border-radius:10px;border-left:3px solid var(--rust);">👉 इन cases में भी सही guidance से जीवन की quality बेहतर की जा सकती है।</p>
@@ -1448,14 +1446,9 @@
     <h2 class="sec-title">Guess करना बंद करें — सही दिशा में बढ़ें</h2>
     <div class="divider"></div>
 
-    <div class="solution-hero-img">
-      <img src="https://images.unsplash.com/photo-1588776814546-1ffbb172d936?w=800&q=80" alt="Ayurvedic Treatment"/>
-      <div class="overlay-text">🌿 Root Cause Based Ayurvedic Support</div>
-    </div>
-
     <div class="solution-pillars">
       <div class="pillar-card">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=80" alt="Natural" class="pillar-img"/>
+        <img src="./Image/11.png" alt="Natural" class="pillar-img"/>
         <div>
           <div class="pillar-num">01</div>
           <div class="pillar-title">Natural Healing Support</div>
@@ -1463,7 +1456,7 @@
         </div>
       </div>
       <div class="pillar-card">
-        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=200&q=80" alt="Vata Balance" class="pillar-img"/>
+        <img src="./Image/12.png" alt="Vata Balance" class="pillar-img"/>
         <div>
           <div class="pillar-num">02</div>
           <div class="pillar-title">Body Balance</div>
@@ -1471,7 +1464,7 @@
         </div>
       </div>
       <div class="pillar-card">
-        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=80" alt="Personalized" class="pillar-img"/>
+        <img src="./Image/13.png" alt="Personalized" class="pillar-img"/>
         <div>
           <div class="pillar-num">03</div>
           <div class="pillar-title">Personalized Guidance</div>
@@ -1492,7 +1485,7 @@
       <div class="step-item">
         <div class="step-dot">1</div>
         <div class="step-card">
-          <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&q=80" alt="Free Consultation" class="step-card-img"/>
+          <img src="./Image/16.png" alt="Free Consultation" class="step-card-img"/>
           <div class="step-card-body">
             <h4>FREE Consultation</h4>
             <p>आपकी पूरी history और symptoms समझे जाते हैं — बिना किसी judgment के।</p>
@@ -1502,7 +1495,7 @@
       <div class="step-item">
         <div class="step-dot">2</div>
         <div class="step-card">
-          <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?w=800&q=80" alt="Cause Analysis" class="step-card-img"/>
+          <img src="./Image/17.png" alt="Cause Analysis" class="step-card-img"/>
           <div class="step-card-body">
             <h4>Cause Analysis</h4>
             <p>आपकी problem reversible है या नहीं — clear किया जाता है।</p>
@@ -1512,7 +1505,7 @@
       <div class="step-item">
         <div class="step-dot">3</div>
         <div class="step-card">
-          <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&q=80" alt="Personalised Plan" class="step-card-img"/>
+          <img src="./Image/18.png" alt="Personalised Plan" class="step-card-img"/>
           <div class="step-card-body">
             <h4>Personalised Plan</h4>
             <p>Therapy + guidance आपके case के अनुसार — completely personalized।</p>
@@ -1522,7 +1515,7 @@
       <div class="step-item">
         <div class="step-dot">4</div>
         <div class="step-card">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Continuous Support" class="step-card-img"/>
+          <img src="./Image/19.png" alt="Continuous Support" class="step-card-img"/>
           <div class="step-card-body">
             <h4>Continuous Support</h4>
             <p>Progress tracking और improvement monitoring — हम हमेशा आपके साथ हैं।</p>
@@ -1574,11 +1567,8 @@
     <div class="divider"></div>
 
     <div class="expert-card">
-      <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=300&q=80" alt="Doctor" class="expert-avatar"/>
-      <div>
-        <div class="expert-name">Dr. Ayurvedic Expert</div>
-        <div class="expert-creds">🌿 Ayurvedic Health Specialist<br>✅ Natural & Safe Approach<br>💬 Personalized Guidance</div>
-      </div>
+      <img src="./Image/ayurvedic.png" alt="Doctor" class="expert-avatar"/>
+     
     </div>
 
     <div class="trust-badges">
@@ -1605,6 +1595,16 @@
     </div>
   </section>
 
+   <!-- ========== URGENCY ========== -->
+  <section class="urgency-section">
+    <h2 class="urgency-title">⚡ Delay करने से Problem Permanent बन सकती है</h2>
+    <p class="urgency-body">Early action = Better improvement chances<br>जितना जल्दी शुरू करें, उतना बेहतर result</p>
+    <div class="urgency-timer">
+      <span>⏰ आज के Free Slots सीमित हैं — अभी Book करें</span>
+    </div>
+    <a href="#order" class="btn-primary" style="display:block;text-decoration:none;">🎯 अभी FREE Session Book करें</a>
+  </section>
+
   <!-- ========== RESULTS / BEFORE-AFTER ========== -->
   <section class="section section-alt">
     <div class="sec-label">📊 Real Results</div>
@@ -1614,14 +1614,7 @@
     <div class="ba-container">
       <div class="ba-card">
         <div class="ba-top">
-          <div class="ba-img-wrap">
-            <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=400&q=80" alt="Before - Sad elderly"/>
-            <div class="ba-label before">पहले</div>
-          </div>
-          <div class="ba-img-wrap">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80" alt="After - Happy with doctor"/>
-            <div class="ba-label after">बाद में</div>
-          </div>
+          <img src="./Image/before.png" style="width: 100%; height: auto;" alt="">
         </div>
         <div class="ba-body">
           <div class="ba-stars">★★★★★</div>
@@ -1632,24 +1625,53 @@
 
       <div class="ba-card">
         <div class="ba-top">
-          <div class="ba-img-wrap">
-            <img src="https://images.unsplash.com/photo-1578496779937-3815e442abed?w=400&q=80" alt="Before"/>
-            <div class="ba-label before">पहले</div>
-          </div>
-          <div class="ba-img-wrap">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80" alt="After"/>
-            <div class="ba-label after">बाद में</div>
-          </div>
+        <img src="./Image/after.png" style="width: 100%; height: auto;" alt="">
         </div>
         <div class="ba-body">
           <div class="ba-stars">★★★★★</div>
           <div class="ba-quote">"Confidence वापस आ रहा है। Machine dependency पहले जैसी नहीं रही।"</div>
-          <div class="ba-name">— Sunita M., Delhi, 52 वर्ष</div>
+          <div class="ba-name">— Sunita M., Delhi, 22 वर्ष</div>
         </div>
       </div>
     </div>
 
     <p style="font-size:13px;color:var(--text-muted);margin-top:14px;text-align:center;line-height:1.6;">⚡ Improvement हर case में अलग होता है · सही guidance से better outcome possible है</p>
+  </section>
+
+  <!-- ========== ORDER FORM ========== -->
+  <section class="order-section" id="order">
+    <div class="order-badge">🚀 FREE Consultation Form</div>
+    <h2 class="order-title">आप Problem को <span>ठीक करना</span> चाहते हैं…<br>या lifetime manage करना?</h2>
+    <p class="order-sub">सही decision आज लें। नीचे form fill करें — हमारी team 24 घंटे में call करेगी।</p>
+
+    <div id="orderForm">
+      <form onsubmit="submitForm (event)">
+
+
+      <div class="form-group">
+        <label class="form-label">आपका पूरा नाम *</label>
+        <input type="text" class="form-input" name="name" placeholder="जैसे: Rajesh Kumar" id="fname" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mobile Number *</label>
+        <input type="tel" class="form-input" name="phone" placeholder="10 अंकों का नंबर" id="fphone" maxlength="10" required/>
+      </div>
+
+      <button class="form-submit" type="submit"  >
+        🎯 FREE Consultation Book करें — अभी
+      </button>
+
+            </form>
+
+      <div class="cod-badge">
+        🚚 Free Delivery &nbsp;|&nbsp; 💰 COD Available &nbsp;|&nbsp; 🌿 Free Diet Chart
+      </div>
+    </div>
+
+    <div class="success-msg" id="successMsg">
+      <h3>✅ बहुत बढ़िया!</h3>
+      <p>आपकी Request Successfully Submit हो गई।<br>हमारी Expert Team जल्द ही आपको Call करेगी।<br><br>🎁 आपको मिलेगा: Free Consultation + Free Diet Chart + COD Facility</p>
+    </div>
   </section>
 
   <!-- ========== REVIEWS ========== -->
@@ -1661,7 +1683,7 @@
     <div class="review-scroll">
       <div class="review-card">
         <div class="review-header">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Mohan" class="review-avatar"/>
+          <img src="./Image/20.png" alt="Mohan" class="review-avatar"/>
           <div>
             <div class="review-name">Mohan Sharma</div>
             <div class="review-location">📍 Jaipur, Rajasthan</div>
@@ -1669,12 +1691,11 @@
           </div>
         </div>
         <div class="review-text">"पहले सोचता था कि machine के बिना नहीं चलेगा। लेकिन सही guidance मिली और अब बिना machine के भी बेहतर सुन पाता हूँ।"</div>
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80" alt="Consultation" class="review-img"/>
       </div>
 
       <div class="review-card">
         <div class="review-header">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&q=80" alt="Priya" class="review-avatar"/>
+          <img src="./Image/22.png" alt="Priya" class="review-avatar"/>
           <div>
             <div class="review-name">Priya Verma</div>
             <div class="review-location">📍 Delhi</div>
@@ -1682,12 +1703,11 @@
           </div>
         </div>
         <div class="review-text">"Free consultation में इतनी detail में बताया गया — लगा पहली बार कोई सच में समझ रहा है। Diet chart भी मिला जो बहुत helpful रहा।"</div>
-        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80" alt="Happy patient" class="review-img"/>
       </div>
 
       <div class="review-card">
         <div class="review-header">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="Ramesh" class="review-avatar"/>
+          <img src="./Image/21.png" alt="Ramesh" class="review-avatar"/>
           <div>
             <div class="review-name">Ramesh Kumar</div>
             <div class="review-location">📍 Lucknow, UP</div>
@@ -1744,76 +1764,6 @@
     </div>
   </section>
 
-  <!-- ========== URGENCY ========== -->
-  <section class="urgency-section">
-    <h2 class="urgency-title">⚡ Delay करने से Problem Permanent बन सकती है</h2>
-    <p class="urgency-body">Early action = Better improvement chances<br>जितना जल्दी शुरू करें, उतना बेहतर result</p>
-    <div class="urgency-timer">
-      <span>⏰ आज के Free Slots सीमित हैं — अभी Book करें</span>
-    </div>
-    <a href="#order" class="btn-primary" style="display:block;text-decoration:none;">🎯 अभी FREE Session Book करें</a>
-  </section>
-
-  <!-- ========== ORDER FORM ========== -->
-  <section class="order-section" id="order">
-    <div class="order-badge">🚀 FREE Consultation Form</div>
-    <h2 class="order-title">आप Problem को <span>ठीक करना</span> चाहते हैं…<br>या lifetime manage करना?</h2>
-    <p class="order-sub">सही decision आज लें। नीचे form fill करें — हमारी team 24 घंटे में call करेगी।</p>
-
-    <div id="orderForm">
-      <div class="form-group">
-        <label class="form-label">आपका पूरा नाम *</label>
-        <input type="text" class="form-input" placeholder="जैसे: Rajesh Kumar" id="fname" required/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Mobile Number *</label>
-        <input type="tel" class="form-input" placeholder="10 अंकों का नंबर" id="fphone" maxlength="10" required/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">आपकी उम्र</label>
-        <input type="number" class="form-input" placeholder="जैसे: 55" id="fage" min="1" max="120"/>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Hearing Problem कितने समय से है?</label>
-        <select class="form-input" id="fduration">
-          <option value="">चुनें...</option>
-          <option>6 महीने से कम</option>
-          <option>6 महीने – 1 साल</option>
-          <option>1–3 साल</option>
-          <option>3–5 साल</option>
-          <option>5 साल से ज्यादा</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">अभी Hearing Machine Use करते हैं?</label>
-        <select class="form-input" id="fmachine">
-          <option value="">चुनें...</option>
-          <option>हाँ, दोनों कानों में</option>
-          <option>हाँ, एक कान में</option>
-          <option>नहीं</option>
-          <option>कभी-कभी</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">आपका शहर / जिला</label>
-        <input type="text" class="form-input" placeholder="जैसे: Jaipur" id="fcity"/>
-      </div>
-
-      <button class="form-submit" onclick="submitForm()">
-        🎯 FREE Consultation Book करें — अभी
-      </button>
-
-      <div class="cod-badge">
-        🚚 Free Delivery &nbsp;|&nbsp; 💰 COD Available &nbsp;|&nbsp; 🌿 Free Diet Chart
-      </div>
-    </div>
-
-    <div class="success-msg" id="successMsg">
-      <h3>✅ बहुत बढ़िया!</h3>
-      <p>आपकी Request Successfully Submit हो गई।<br>हमारी Expert Team जल्द ही आपको Call करेगी।<br><br>🎁 आपको मिलेगा: Free Consultation + Free Diet Chart + COD Facility</p>
-    </div>
-  </section>
-
   <!-- ========== DISCLAIMER ========== -->
   <div class="disclaimer">
     <div class="disclaimer-title">⚠️ Disclaimer</div>
@@ -1828,7 +1778,6 @@
     <div class="footer-tagline">Root Cause Based · Natural · Safe · Personalized</div>
     <p style="font-size:11px;color:rgba(255,255,255,0.25);margin-top:8px;">© 2025 All Rights Reserved</p>
   </div>
-
   <pb></pb>
 </div>
 
